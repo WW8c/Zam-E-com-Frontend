@@ -1,0 +1,50 @@
+.order-history-container {
+    margin: 40px 80px;
+  }
+  
+  .order-history-title {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .view-details-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    color: #1890ff;
+  }
+//   / Ant Design table adjustments
+  .ant-table {
+    overflow-x: auto;
+  }
+  // Responsive styles
+@media (max-width: 768px) {
+    .order-history-container {
+    //   padding: 1rem;
+    margin: 20px;
+  
+      .order-history-title {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+  
+      .view-details-btn {
+        font-size: 0.9rem;
+      }
+  
+      .ant-table {
+        font-size: 0.85rem;
+  
+        .ant-table-thead > tr > th,
+        .ant-table-tbody > tr > td {
+          padding: 8px;
+          white-space: nowrap;
+        }
+  
+        // Optional: stack table rows vertically
+        // Not strictly needed due to horizontal scroll
+      }
+    }
+  }

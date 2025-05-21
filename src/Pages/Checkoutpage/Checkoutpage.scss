@@ -1,0 +1,388 @@
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px; /* Gap between left and right sections */
+    padding: 60px 80px;
+  }
+  
+  .billing-box {
+    flex: 1;
+    padding: 20px;
+    // border: 1px solid #ccc;
+    border-radius: 8px;
+    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    h2{
+        color: #191C1F;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+  }
+  
+  .input-row {
+    display: flex;
+    gap: 16px;
+  }
+  .input-row2 {
+    display: flex;
+    gap: 16px;
+  }
+  
+  
+  .input-item {
+    flex: 1;
+  }
+  
+  
+  .checkbox-item {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .payment-options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+  }
+  .payment-heading{
+    margin-bottom: 20px;
+    color: #191C1F;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .payment-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .payment-option span {
+    // margin-top: 10px;
+    font-size: 14px;
+  }
+  .ant-radio-wrapper {
+  .payment-option .ant-radio {
+    margin-top: 4px;
+    border: 1px solid #C9CFD2;
+  }
+     // Target the radio button inner circle when checked
+     .ant-radio-checked .ant-radio-inner {
+        border-color: #FA8232; // Change border color
+        background-color: #FA8232; // Change background color
+      }
+       // Remove hover effect on the wrapper
+       &:hover .ant-radio-inner {
+        border-color: #d9d9d9 !important; // Set to default border color or your desired color
+      }
+    }
+    .order-notes {
+        margin-top: 30px;
+      
+        h3 {
+          font-size: 18px;
+          font-weight: 500;
+          color: #191C1F;
+          margin-bottom: 10px;
+        }
+      
+        .input-item {
+          margin-top: 10px;
+        }
+      }
+      .right-container {
+        width: 424px;
+        padding: 20px;
+        border: 1px solid#E4E7E9;   
+        border-radius: 4px;
+        height:fit-content;
+       }
+      
+      .summary-heading {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 25px;
+      }
+      .order-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 25px;
+      }
+      
+      .item-details {
+        display: flex;
+        align-items: flex-start; /* Align items to the start (top) */
+      }
+      
+      .item-image {
+        width: 50px; /* Adjust image size */
+        height: auto;
+        margin-right: 10px;
+      }
+      
+      .item-info {
+        display: flex;
+        flex-direction: column; /* Stack the name and quantity/price */
+      }
+      
+      .item-name {
+        font-size: 14px;
+      }
+      
+      .item-quantity-price {
+        margin-top: 5px; /* Space between item name and quantity/price */
+        font-size: 14px; /* Smaller text for quantity and price */
+        color: #555; /* Optional: Change text color */
+      }
+      
+      .item-total {
+        text-align: right;
+        font-weight: bold;
+        margin-left: 20px; /* Adjust margin for proper alignment */
+      }
+      
+      .order-summary {
+        margin-top: 20px;
+      }
+      
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px; /* Space between items */
+      }
+      
+      .summary-label {
+        color: #5F6C72;
+        font-size: 14px; /* Label font size */
+      }
+      
+      .summary-value {
+        font-weight: 500;
+        color:#191C1F;
+        font-size: 14px; /* Value font size */
+      }
+      
+      /* Additional styling for the "Total" value if needed */
+      .summary-item:last-child .summary-value {
+        font-weight: 600;
+        color: #191C1F; /* Make the total value bold and stand out */
+        font-size: 16px;
+      }
+      
+      .summary-hr {
+        border: 1px solid #E4E7E9;
+        margin: 20px 0;
+      }
+      
+      .cta-button {
+        width: 100%;
+      padding: 0.7rem 1.5rem;
+      background-color: #FA8232;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 24px;
+      border: none;
+      transition: all 0.3s ease; /* <-- Smooth transition added */
+      border-radius: 3px;
+      cursor: pointer;
+      &:hover {
+        background-color: white; 
+        border: 1px solid #FA8232;/* Darker on hover */
+        color: #FA8232;
+      }
+      }
+      
+      .checkout-container .input-item .ant-input {
+        border-radius: 2px; /* Set border-radius to 2px */
+        font-size: 16px; /* Adjust font size for better visibility */
+        padding: 12px 16px; /* Adjust padding to match large size */
+      }
+      
+      /* Customizing the color of input fields */
+      .checkout-container .input-item .ant-input {
+        background-color: white; /* Light background color */
+        color: #77878F; /* Dark text color */
+        border: 1px solid #E4E7E9; /* Subtle border */
+      }
+      
+      .checkout-container .input-item .ant-input:focus {
+        border-color:#FA8232; /* Change border color when focused */
+        // box-shadow: 0 0 5px rgba(45, 165, 243, 0.2); /* Add shadow effect on focus */
+        box-shadow: none !important;
+      }
+      
+/* For the Select component */
+.checkout-container .input-item .ant-select-selector {
+    border-radius: 2px; /* Set border-radius to 2px */
+    font-size: 16px; /* Adjust font size for better visibility */
+    padding: 12px 16px; /* Adjust padding to match input fields */
+    height: 51px; /* Set the height equal to the input field */
+    background-color: white; /* Light background color */
+    color: #77878F; /* Dark text color */
+    border: 1px solid #E4E7E9; /* Subtle border */
+  }
+  
+  /* Center the dropdown icon inside the select input */
+  .checkout-container .input-item .ant-select-arrow {
+    top: 50%; /* Vertically center the icon */
+    transform: translateY(-50%); /* Offset the icon by half of its height */
+    margin-top: 8px;
+  }
+  
+  /* Customizing the dropdown to be centered */
+  .checkout-container .input-item .ant-select-dropdown {
+    border-radius: 2px; /* Set border-radius for the dropdown */
+    width: auto; /* Let the width adjust based on content */
+    min-width: 100%; /* Ensure it has a minimum width */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center it by shifting it left by 50% of its width */
+  }
+  
+  /* Optional: style the selected option */
+  .checkout-container .input-item .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: #2DA5F3;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .checkout-container {
+      flex-direction: column;
+      padding: 20px 15px;
+  
+    
+      .right-container {
+        width: 100%;
+        padding: 15px;
+      }
+  .billing-box{
+    padding: 0px;
+  }
+      .payment-options {
+        // flex-direction: column;
+        gap: 50px;
+      }
+  
+      .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+  
+        .item-total {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+  
+      .summary-item {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+  
+      .cta-button {
+        margin-top: 20px;
+        font-size: 14px;
+        padding: 12px;
+      }
+  
+      .input-row {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+    }
+  
+    .payment-option {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 10px;
+  
+      span {
+        text-align: left;
+      }
+    }
+  
+    .checkout-container .input-item .ant-input,
+    .checkout-container .input-item .ant-select-selector {
+      font-size: 14px;
+      // padding: 10px 14px;
+    }
+    :where(.css-dev-only-do-not-override-1v5z42l).ant-form:not(.ant-form-inline) .ant-form-item{
+      margin-bottom: 8px !important ;
+    }
+  }
+  @media (max-width: 768px) {
+    .input-row2 {
+    
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 12px;
+      .input-item{
+        margin-top: 12px;
+      }
+    }
+  }
+  
+  
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .checkout-container {
+      flex-direction: column;
+      padding: 40px;
+  
+      .billing-box,
+      .right-container {
+        width: 100%;
+        padding: 20px;
+      }
+  
+      .payment-options {
+        gap: 40px;
+      }
+  
+      .input-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+  
+      .cta-button {
+        font-size: 15px;
+        padding: 14px;
+      }
+  
+      .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+  
+        .item-total {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  
+    .payment-option {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 12px;
+  
+      span {
+        text-align: left;
+      }
+    }
+  
+    .checkout-container .input-item .ant-input,
+    .checkout-container .input-item .ant-select-selector {
+      font-size: 15px;
+      padding: 12px 16px;
+    }
+    :where(.css-dev-only-do-not-override-1v5z42l).ant-form:not(.ant-form-inline) .ant-form-item{
+      margin-bottom: 8px !important;
+    }
+  }
+  

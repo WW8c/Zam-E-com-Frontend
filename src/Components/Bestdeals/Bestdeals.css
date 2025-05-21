@@ -1,0 +1,24 @@
+/* src/components/Section2.scss */
+.section-2 {
+  padding: 10px 80px 50px;
+  /* Media query for mobile responsiveness */
+  /* Media query for 769px to 1024px */
+}
+.section-2 .product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+  justify-items: stretch;
+}
+@media (max-width: 768px) {
+  .section-2 {
+    padding: 15px;
+  }
+  .section-2 .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+  }
+}
+@media (max-width: 1200px) and (min-width: 769px) {
+  .section-2 .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row on medium screens */
+  }
+}/*# sourceMappingURL=Bestdeals.css.map */

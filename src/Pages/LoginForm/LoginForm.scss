@@ -1,0 +1,247 @@
+.login-box {
+    width: 480px;
+    margin:60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    transition: 0.3s ease;
+  
+    .tab-row {
+      display: flex;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+  
+      .tab {
+        flex: 1;
+        text-align: center;
+        padding: 12px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #77878F;
+        font-size: 20px;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease;
+  
+        &.active {
+          color:#191C1F;
+          // font-size: 20px;
+          // font-weight: 600;
+          border-bottom: 3px solid #FA8232;
+        }
+      }
+    }
+  
+    .form {
+      display: flex;
+      flex-direction: column;
+      .arrow {
+        font-size: 16px;
+        margin-left: 4px;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+  
+        .custom-select {
+          width: 100%;
+      
+          .ant-select-selector {
+            padding:20px 13px !important;
+            height: auto !important;
+            border: 1px solid #E4E7E9 !important;
+            border-radius: 1px !important;
+            font-size: 14px !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+      
+            &:focus,
+            &:hover {
+              border-color: #FA8232 !important;
+              box-shadow: none !important;
+            }
+          }
+      
+          .ant-select-selection-placeholder {
+            color: #888;
+          }
+      
+          .ant-select-arrow {
+            color: #FA8232;
+          }
+        }
+      
+        label {
+          display: block;
+          font-weight: 500;
+          margin-bottom: 8px;
+          color: #333;
+        }
+  
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+          width: 100%;
+          padding: 13px;
+          border: 1px solid #E4E7E9;
+          border-radius: 1px;
+          outline: none;
+          font-size: 14px;
+  
+          &:focus {
+            border-color:#FA8232;
+          }
+        }
+  
+        .label-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+  
+          .forgot-password-link {
+            text-decoration: none;
+            color: #2da5f3;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+          }
+          
+          // .forgot-password-link:hover {
+          //   text-decoration: underline;
+          // }
+          
+        }
+  
+        .password-input {
+          position: relative;
+  
+          input {
+            padding-right: 40px;
+          }
+  
+          .icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #FA8232;
+            cursor: pointer;
+
+          }
+        }
+      }
+  
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 20px;
+  
+        input[type='checkbox'] {
+          margin-top: 4px;
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+  
+        label {
+          line-height: 1.4;
+  
+          .link {
+            color: #62BBF6;
+            font-weight: 500;
+            // cursor: pointer;
+  
+            // &:hover {
+            //   text-decoration: underline;
+            // }
+          }
+        }
+      }
+  
+      .btn-signin,
+      .btn-signup {
+        background: #FA8232;
+        color: #fff;
+        padding: 14px;
+        font-size: 14px;
+        margin-top: 10px;
+        font-weight: 600;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+  
+        .arrow {
+          font-size: 16px;
+          margin-left: 4px;
+        }
+  
+        &:hover {
+          background: white;
+          color: #FA8232;
+          border: 1px solid #FA8232;
+        }
+      }
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .login-box {
+      width: 90%;
+      margin: 70px auto;
+      padding: 24px;
+  
+      .tab-row {
+        .tab {
+          font-size: 16px;
+          padding: 10px;
+        }
+      }
+  
+      .form {
+        .form-group {
+          input[type='text'],
+          input[type='email'],
+          input[type='password'] {
+            padding: 11px;
+            font-size: 13px;
+          }
+  
+          .label-row {
+
+            align-items: flex-start;
+            gap: 4px;
+  
+            .forgot-password-link {
+              font-size: 13px;
+            }
+          }
+  
+          .password-input {
+            .icon {
+              font-size: 16px;
+            }
+          }
+        }
+  
+   
+  
+        .btn-signin,
+        .btn-signup {
+          padding: 12px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  

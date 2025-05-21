@@ -1,0 +1,27 @@
+/* src/components/Section2.scss */
+.section-2 {
+  padding: 10px 80px 50px;
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+    // justify-items: center; /* Centers the product cards in each column */
+    justify-items: stretch;
+  }
+
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+padding: 15px;
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+  
+    }
+  }
+  /* Media query for 769px to 1024px */
+  @media (max-width: 1200px) and (min-width: 769px) {
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr); /* 4 items per row on medium screens */
+    
+    }
+  }
+}

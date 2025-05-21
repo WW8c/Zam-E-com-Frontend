@@ -1,0 +1,140 @@
+@charset "UTF-8";
+.profile-container {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 4px;
+  max-width: 1000px;
+  border: 1px solid #E4E7E9;
+  margin: 40px 80px;
+}
+
+.profile-heading {
+  font-size: 14px;
+  color: #191C1F;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.profile-img-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.address-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.address-input {
+  flex: 1;
+  min-width: 190px;
+}
+
+.custom-save-btn {
+  padding: 14px 24px;
+  background-color: #FA8232; /* Custom background color */
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+.custom-save-btn:hover {
+  background-color: white; /* Hover effect */
+  border: 1px solid #FA8232;
+  color: #FA8232;
+}
+
+/* Change Password Container */
+.change-password-container {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 4px;
+  max-width: 1000px;
+  border: 1px solid #E4E7E9;
+  margin: 40px 80px;
+}
+
+/* Change Password Heading */
+.change-password-heading {
+  font-size: 14px;
+  color: #191C1F;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Input Fields for Change Password Section */
+.change-password-container .ant-form-item {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+/* Styling the Password Input Fields */
+.change-password-container .ant-input-password {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Form layout: Arrange all inputs in a column */
+.change-password-container .ant-form {
+  display: flex;
+  flex-direction: column; /* Ensures all form items are stacked vertically */
+  gap: 16px; /* Space between form items */
+  width: 100%;
+}
+
+/* Remove red border from Ant Design Upload component */
+.ant-upload-wrapper .ant-upload.ant-upload-select-picture-card {
+  border-color: #d9d9d9 !important;
+  border: none !important;
+}
+
+/* Also target the image preview wrapper */
+.ant-upload-list-item-error {
+  border-color: #d9d9d9 !important;
+}
+
+/* ✅ Responsive Styling for Mobile Devices */
+@media (max-width: 768px) {
+  .profile-container,
+  .change-password-container {
+    padding: 20px;
+    margin: 15px;
+  }
+  .profile-img-section {
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .address-input {
+    min-width: 100%;
+  }
+  .custom-save-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    font-size: 13px;
+  }
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+  :where(.css-dev-only-do-not-override-1v5z42l).ant-modal .ant-modal-content {
+    width: 80% !important;
+    margin: auto !important;
+  }
+}/*# sourceMappingURL=Profile.css.map */

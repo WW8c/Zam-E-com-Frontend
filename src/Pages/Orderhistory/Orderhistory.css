@@ -1,0 +1,42 @@
+.order-history-container {
+  margin: 40px 80px;
+}
+
+.order-history-title {
+  margin-bottom: 1rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.view-details-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  color: #1890ff;
+}
+
+.ant-table {
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .order-history-container {
+    margin: 20px;
+  }
+  .order-history-container .order-history-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .order-history-container .view-details-btn {
+    font-size: 0.9rem;
+  }
+  .order-history-container .ant-table {
+    font-size: 0.85rem;
+  }
+  .order-history-container .ant-table .ant-table-thead > tr > th,
+  .order-history-container .ant-table .ant-table-tbody > tr > td {
+    padding: 8px;
+    white-space: nowrap;
+  }
+}/*# sourceMappingURL=Orderhistory.css.map */

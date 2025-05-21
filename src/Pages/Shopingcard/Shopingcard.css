@@ -1,0 +1,212 @@
+.shopping-wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 80px 80px;
+  flex-wrap: wrap;
+}
+.shopping-wrapper .shopping-left {
+  flex: 2;
+  height: auto;
+  border: 1px solid #E4E7E9;
+  border-radius: 4px;
+}
+.shopping-wrapper .shopping-left h3 {
+  padding: 20px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #191C1F;
+}
+.shopping-wrapper .shopping-left .cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #eee;
+}
+.shopping-wrapper .shopping-left .cart-table th, .shopping-wrapper .shopping-left .cart-table td {
+  padding: 15px;
+  text-align: left;
+}
+.shopping-wrapper .shopping-left .cart-table th {
+  background-color: #F2F4F5;
+  font-weight: 500;
+  font-size: 12px;
+}
+.shopping-wrapper .shopping-left .cart-table td {
+  vertical-align: middle;
+  color: #191C1F;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+.shopping-wrapper .shopping-left .cart-table .product-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.shopping-wrapper .shopping-left .cart-table .product-details p {
+  font-size: 14px;
+  width: 250px;
+}
+.shopping-wrapper .shopping-left .cart-table .product-details img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #ddd;
+}
+.shopping-wrapper .shopping-left .cart-table .product-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.shopping-wrapper .shopping-left .cart-table .product-details .remove {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #000;
+  border-radius: 50%;
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.shopping-wrapper .shopping-left .cart-table .product-details .remove:hover {
+  color: red;
+  border-color: red;
+}
+.shopping-wrapper .shopping-left .cart-table .qty-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #E4E7E9;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+.shopping-wrapper .shopping-left .cart-table .qty-control button {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  font-size: 20px;
+}
+.shopping-wrapper .shopping-left .cart-table .qty-control span {
+  min-width: 24px;
+  text-align: center;
+}
+.shopping-wrapper .shopping-left .btn-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+.shopping-wrapper .shopping-left .btn-group .btn {
+  padding: 12px 24px;
+  border: 2px solid #2DA5F3;
+  background: white;
+  border-radius: 2px;
+  color: #2DA5F3;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+}
+.shopping-wrapper .shopping-right {
+  flex: 1;
+  min-width: 320px;
+}
+.shopping-wrapper .shopping-right .divide {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+.shopping-wrapper .shopping-right .card-totals {
+  padding: 20px;
+  border: 1px solid #eee;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.shopping-wrapper .shopping-right .card-totals h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #191C1F;
+}
+.shopping-wrapper .shopping-right .card-totals .totals p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0 12px;
+  font-size: 14px;
+  color: #5F6C72;
+}
+.shopping-wrapper .shopping-right .card-totals .totals p span {
+  font-weight: 500;
+  color: #191C1F;
+}
+.shopping-wrapper .shopping-right .card-totals .totals p.total {
+  font-size: 16px;
+  margin-top: 15px;
+  color: #191C1F;
+}
+.shopping-wrapper .shopping-right .card-totals .checkout {
+  margin-top: 20px;
+  width: 100%;
+  padding: 16px 32px;
+  background-color: #fa8232;
+  outline: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  font-weight: 700;
+  transition: all 0.3s ease; /* <-- Smooth transition added */
+  cursor: pointer;
+}
+.shopping-wrapper .shopping-right .card-totals .checkout:hover {
+  background-color: white;
+  border: 1px solid #fa8232;
+  color: #fa8232;
+}
+
+@media (max-width: 768px) {
+  .shopping-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .shopping-wrapper .shopping-right .card-totals .checkout {
+    font-size: 15px;
+  }
+  .shopping-left {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .shopping-left .cart-table {
+    display: block;
+    overflow-x: auto; /* Make the table scrollable */
+  }
+  .shopping-left .cart-table table {
+    width: 100%;
+  }
+  .shopping-left .cart-table th, .shopping-left .cart-table td {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .shopping-left .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .shopping-left .btn-group .btn {
+    width: 100%;
+  }
+  .shopping-right {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .shopping-right .card-totals {
+    width: 100%;
+  }
+}/*# sourceMappingURL=Shopingcard.css.map */

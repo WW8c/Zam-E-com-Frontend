@@ -1,0 +1,289 @@
+.help-center {
+  margin: 40px 80px;
+}
+.help-center .top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.help-center .top-section .left .badge {
+  background: #EFD33D;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.help-center .top-section .left h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.help-center .top-section .left .search-bar {
+  display: flex;
+  align-items: center;
+}
+.help-center .top-section .left .search-bar .input-wrapper {
+  position: relative;
+  flex: 1;
+}
+.help-center .top-section .left .search-bar .input-wrapper .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 18px;
+}
+.help-center .top-section .left .search-bar input {
+  padding: 0.9rem 40px;
+  width: 300px;
+  border: 1px solid #E4E7E9;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+}
+.help-center .top-section .left .search-bar button {
+  background: #ff7d1a;
+  color: white;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.help-center .top-section .left .search-bar button:hover {
+  background: #fe6e0e;
+}
+.help-center .top-section .right img {
+  max-width: 450px;
+}
+.help-center .assistance {
+  margin-bottom: 60px;
+  background: #fff;
+}
+.help-center .assistance h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #191C1F;
+  text-align: center;
+}
+.help-center .assistance .options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.help-center .assistance .options .option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  border: 2px solid #FFE7D6;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.help-center .assistance .options .option svg {
+  font-size: 20px;
+  color: #ff7d1a;
+}
+.help-center .assistance .options .option:hover {
+  border: 2px solid #ff7d1a;
+  box-shadow: 0px 8px 40px 0px rgba(250, 130, 50, 0.1215686275);
+}
+.help-center .assistance .options .option span {
+  font-weight: 500;
+  color: #191C1F;
+  font-size: 16px;
+}
+.help-center .topics {
+  padding: 2rem 0px;
+}
+.help-center .topics h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #191C1F;
+  font-size: 24px;
+}
+.help-center .topics .columns {
+  display: flex;
+  justify-content: space-between;
+}
+.help-center .topics .columns ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  padding: 0;
+}
+.help-center .topics .columns ul li {
+  margin: 16px 0;
+  font-size: 16px;
+  color: #191C1F;
+  font-weight: 400;
+  cursor: pointer;
+}
+.help-center .topics .columns ul li:hover {
+  color: #FA8232;
+  font-weight: 600;
+}
+.help-center .contact {
+  text-align: center;
+  padding: 4rem 0rem;
+  background: #F2F4F5;
+}
+.help-center .contact .contact-btn {
+  background: #2DA5F3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  font-weight: 600;
+}
+.help-center .contact p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.help-center .contact .methods {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.help-center .contact .methods .method {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: white;
+  padding: 32px;
+  border-radius: 4px;
+  text-align: left;
+  width: auto;
+  box-shadow: 0px 24px 32px 0px rgba(25, 28, 31, 0.0784313725);
+}
+.help-center .contact .methods .method .icon-container {
+  font-size: 32px;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #EAF6FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.help-center .contact .methods .method .icon-container2 {
+  font-size: 32px;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #EAF7E9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.help-center .contact .methods .method .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.help-center .contact .methods .method .content h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.help-center .contact .methods .method .content p {
+  margin: 0;
+  color: #5F6C72;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.help-center .contact .methods .method .content button {
+  margin-top: 0.5rem;
+  padding: 14px 24px;
+  background-color: #2DA5F3;
+  color: white;
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .help-center {
+    margin: 20px;
+  }
+  .help-center .top-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .help-center .top-section .left h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .help-center .top-section .left .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .help-center .top-section .left .search-bar input {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .help-center .top-section .left .search-bar button {
+    border-radius: 4px;
+    width: 100%;
+  }
+  .help-center .top-section .right img {
+    max-width: 100%;
+  }
+  .help-center .assistance h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .help-center .assistance .options {
+    grid-template-columns: 1fr;
+  }
+  .help-center .topics {
+    padding: 1rem 0;
+  }
+  .help-center .topics h3 {
+    font-size: 20px;
+  }
+  .help-center .topics .columns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .help-center .topics .columns ul {
+    margin-left: 1rem;
+  }
+  .help-center .contact {
+    padding: 2rem 1rem;
+  }
+  .help-center .contact p {
+    font-size: 1rem;
+  }
+  .help-center .contact .methods {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .help-center .contact .methods .method {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .help-center .contact .methods .method .content {
+    align-items: center;
+  }
+  .help-center .contact .methods .method button {
+    width: 100%;
+  }
+}/*# sourceMappingURL=Customerhelp.css.map */

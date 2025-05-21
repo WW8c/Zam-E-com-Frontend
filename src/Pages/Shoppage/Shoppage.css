@@ -1,0 +1,128 @@
+.shoppage {
+  padding: 40px 80px;
+}
+.shoppage .filter-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+.shoppage .filter-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.shoppage .filter-toggle-icon {
+  color: #FA8232;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.shoppage .shoppage-content {
+  display: flex;
+  gap: 20px;
+}
+.shoppage .shoppage-content .filter-section {
+  margin-bottom: 20px;
+}
+.shoppage .shoppage-content .category-filter {
+  flex: 0 0 250px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.shoppage .shoppage-content .category-filter h3 {
+  margin-bottom: 16px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.shoppage .shoppage-content .category-filter .category-list {
+  display: flex;
+  flex-direction: column;
+}
+.shoppage .shoppage-content .category-filter .category-list .ant-radio-wrapper {
+  margin-bottom: 12px;
+}
+.shoppage .shoppage-content .category-filter .category-list .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  border-color: #FA8232;
+  background-color: #FA8232;
+}
+.shoppage .shoppage-content .category-filter .category-list .ant-radio-wrapper .ant-radio + span {
+  color: #475156 !important;
+  font-size: 14px;
+}
+.shoppage .shoppage-content .category-filter .category-list .ant-radio-wrapper:hover .ant-radio-inner {
+  border-color: #d9d9d9 !important;
+}
+.shoppage .shoppage-content .category-filter .category-list .ant-radio-wrapper.ant-radio-wrapper-checked .ant-radio + span {
+  font-weight: 500;
+  color: #191C1F;
+}
+.shoppage .shoppage-content .category-filter .brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+.shoppage .shoppage-content .category-filter .brand-list .ant-checkbox-wrapper {
+  width: 47%;
+  display: flex;
+  align-items: center;
+}
+.shoppage .shoppage-content .category-filter .brand-list .ant-checkbox-input:hover + .ant-checkbox-inner {
+  border-color: #C9CFD2 !important;
+}
+.shoppage .shoppage-content .category-filter .brand-list .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #FA8232;
+  border-color: #FA8232;
+}
+.shoppage .shoppage-content .product-grid-container {
+  flex: 1;
+}
+.shoppage .shoppage-content .product-grid-container .product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.shoppage .shoppage-content .product-grid-container .product-card {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .shoppage {
+    padding: 15px;
+  }
+  .shoppage .shoppage-content {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .shoppage .shoppage-content .category-filter {
+    flex: 1 1 100%;
+    padding-right: 0;
+  }
+  .shoppage .shoppage-content .category-filter h3 {
+    font-size: 14px;
+  }
+  .shoppage .shoppage-content .category-filter .category-list .ant-radio-wrapper {
+    margin-bottom: 10px;
+  }
+  .shoppage .shoppage-content .category-filter .category-list .ant-radio-wrapper .ant-radio + span {
+    font-size: 13px;
+  }
+  .shoppage .shoppage-content .category-filter .brand-list {
+    gap: 10px;
+  }
+  .shoppage .shoppage-content .category-filter .brand-list .ant-checkbox-wrapper {
+    width: 48%;
+  }
+  .shoppage .shoppage-content .product-grid-container {
+    flex: 1 1 100%;
+  }
+  .shoppage .shoppage-content .product-grid-container .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}/*# sourceMappingURL=Shoppage.css.map */

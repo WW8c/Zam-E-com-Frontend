@@ -1,0 +1,58 @@
+.track-order-container {
+  max-width: 500px;
+  margin: 120px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+.track-order-container h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+}
+.track-order-container .track-input {
+  width: 100%;
+  padding: 13px 15px;
+  font-size: 16px;
+  border: 1px solid #eae8e8;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  transition: border-color 0.3s;
+}
+.track-order-container .track-input:focus {
+  outline: none;
+}
+.track-order-container .track-button {
+  width: 100%;
+  padding: 14px 15px;
+  font-size: 16px;
+  background-color: #FA8232;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.track-order-container .track-button:hover {
+  color: #FA8232;
+  background-color: #fff;
+  border: 1px solid #FA8232;
+}
+@media (max-width: 768px) {
+  .track-order-container {
+    margin: 60px 15px;
+    padding: 24px;
+  }
+  .track-order-container h2 {
+    font-size: 20px;
+  }
+  .track-order-container .track-input,
+  .track-order-container .track-button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}/*# sourceMappingURL=Trackorder.css.map */

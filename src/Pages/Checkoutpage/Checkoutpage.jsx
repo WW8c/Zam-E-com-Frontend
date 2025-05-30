@@ -14,7 +14,6 @@ const CheckoutPage = () => {
     const { cartItems, total } = location.state || {}; // Use default empty values if state is not found
   // State to track selected payment method
   const [paymentMethod, setPaymentMethod] = useState('cod');
-
   // Handle payment method change
   const handlePaymentMethodChange = (e) => {
     setPaymentMethod(e.target.value);

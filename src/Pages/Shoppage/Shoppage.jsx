@@ -5,20 +5,21 @@ import { product1, product2, product3, product4 } from '../../assets';
 import { Radio, Checkbox } from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons'; // Import icons
 const products = [
-  { id: 1, imgSrc: product1, title: "2-Barrel Carburetor - Standard", price: "$299", category: "Electronics Devices", brand: "Apple" },
-  { id: 2, imgSrc: product2, title: "Simple Mobile 4G LTE - 64GB", price: "$899", category: "SmartPhone", brand: "Samsung" },
-  { id: 3, imgSrc: product3, title: "4K UHD Smart TV - 43'' Basic", price: "$199", category: "TV & Homes Appliances", brand: "Sony" },
-  { id: 4, imgSrc: product4, title: "Bose Sport Earbuds - Gen 1", price: "$299", category: "Headphone", brand: "Bose" },
-  { id: 5, imgSrc: product3, title: "4K UHD Smart TV - 50'' Premium", price: "$899", category: "TV & Homes Appliances", brand: "Samsung" },
-  { id: 6, imgSrc: product1, title: "2-Barrel Carburetor - Pro Performance", price: "$349", category: "Electronics Devices", brand: "Dell" },
-  { id: 7, imgSrc: product2, title: "Simple Mobile 4G LTE - 128GB", price: "$999", category: "SmartPhone", brand: "Apple" },
-  { id: 8, imgSrc: product4, title: "Bose Sport Earbuds - Gen 2", price: "$319", category: "Headphone", brand: "Bose" },
-  { id: 9, imgSrc: product3, title: "4K UHD Smart TV - 55'' Budget", price: "$179", category: "TV & Homes Appliances", brand: "LG" },
-  { id: 10, imgSrc: product1, title: "2-Barrel Carburetor - High Torque", price: "$329", category: "Electronics Devices", brand: "HP" },
-  { id: 11, imgSrc: product2, title: "Simple Mobile 4G - Pixel Edition", price: "$899", category: "SmartPhone", brand: "Google" },
-  { id: 12, imgSrc: product3, title: "4K UHD Smart TV - 60'' Slim Bezel", price: "$549", category: "TV & Homes Appliances", brand: "Sony" },
-  { id: 13, imgSrc: product4, title: "Bose Sport Earbuds - Lite Version", price: "$279", category: "Headphone", brand: "Xiaomi" }
+  { id: 11, imgSrc: product1, title: "2-Barrel Carburetor - Standard", price: "$299", category: "Electronics Devices", brand: "Apple" },
+  { id: 12, imgSrc: product2, title: "Simple Mobile 4G LTE - 64GB", price: "$899", category: "SmartPhone", brand: "Samsung" },
+  { id: 13, imgSrc: product3, title: "4K UHD Smart TV - 43'' Basic", price: "$199", category: "TV & Homes Appliances", brand: "Sony" },
+  { id: 14, imgSrc: product4, title: "Bose Sport Earbuds - Gen 1", price: "$299", category: "Toys & Games", brand: "Bose" },
+  { id: 15, imgSrc: product3, title: "4K UHD Smart TV - 50'' Premium", price: "$899", category: "TV & Homes Appliances", brand: "Samsung" },
+  { id: 16, imgSrc: product1, title: "2-Barrel Carburetor - Pro Performance", price: "$349", category: "Electronics Devices", brand: "Dell" },
+  { id: 17, imgSrc: product2, title: "Simple Mobile 4G LTE - 128GB", price: "$999", category: "SmartPhone", brand: "Apple" },
+  { id: 18, imgSrc: product4, title: "Bose Sport Earbuds - Gen 2", price: "$319", category: "Toys & Games", brand: "Bose" },
+  { id: 19, imgSrc: product3, title: "4K UHD Smart TV - 55'' Budget", price: "$179", category: "TV & Homes Appliances", brand: "LG" },
+  { id: 20, imgSrc: product1, title: "2-Barrel Carburetor - High Torque", price: "$329", category: "Electronics Devices", brand: "HP" },
+  { id: 21, imgSrc: product2, title: "Simple Mobile 4G - Pixel Edition", price: "$899", category: "SmartPhone", brand: "Google" },
+  { id: 22, imgSrc: product3, title: "4K UHD Smart TV - 60'' Slim Bezel", price: "$549", category: "TV & Homes Appliances", brand: "Sony" },
+  { id: 23, imgSrc: product4, title: "Bose Sport Earbuds - Lite Version", price: "$279", category: "Toys & Games", brand: "Xiaomi" }
 ];
+
 
 const categories = [
   "Electronics Devices",
@@ -158,6 +159,7 @@ const Shoppage = () => {
                 title={product.title}
                 price={product.price}
                 id={product.id}
+                category={product.category}
               />
             ))}
           </div>

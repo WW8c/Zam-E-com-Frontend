@@ -3,9 +3,11 @@ import './ProductCard.scss';
 import { ShoppingCartOutlined, EyeOutlined } from '@ant-design/icons';
 import { Rate } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext'; // ✅ Import context
 
-const ProductCard = ({ imgSrc, title, price, id, isDigital, packageDetails }) => {
+const ProductCard = ({ imgSrc, title, price, id, isDigital, packageDetails, category }) => {
   const navigate = useNavigate();
+  const { addToCart } = useCart(); // ✅ Use context
 
   const handleEyeClick = () => {
     navigate(`/product/${id}`, {
@@ -15,7 +17,8 @@ const ProductCard = ({ imgSrc, title, price, id, isDigital, packageDetails }) =>
         price,
         id,
         isDigital,
-        packageDetails
+        packageDetails,
+        category,
       }
     });
   };
@@ -28,31 +31,28 @@ const ProductCard = ({ imgSrc, title, price, id, isDigital, packageDetails }) =>
       price: parseFloat(price.replace('$', '')),
       originalPrice: parseFloat(price.replace('$', '')),
       quantity: 1,
+      category,
+   
     };
-
-    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingItemIndex = existingCart.findIndex(item => item.id === id);
-
-    if (existingItemIndex !== -1) {
-      existingCart[existingItemIndex].quantity += 1;
-    } else {
-      existingCart.push(newProduct);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(existingCart));
+ if (isDigital) {
+    newProduct.packageLevel = 'Basic'; // or whatever level is selected
+  }
+    addToCart(newProduct); // ✅ Add via context
     navigate('/shoping-card');
   };
 
   return (
     <div className="product-card">
       <div className="image-container">
-        {isDigital && <div className="digital-badge">Digital Product</div>} {/* ✅ Badge */}
+        {isDigital && <div className="digital-badge">Digital Product</div>}
         <img src={imgSrc} alt={title} />
         <div className="overlay">
           <div className="icon-group">
-            <div className="icon" onClick={handleAddToCart}>
-              <ShoppingCartOutlined />
-            </div>
+            {!isDigital && (
+              <div className="icon" onClick={handleAddToCart}>
+                <ShoppingCartOutlined />
+              </div>
+            )}
             <div className="icon" onClick={handleEyeClick}>
               <EyeOutlined />
             </div>
@@ -73,4 +73,4 @@ const ProductCard = ({ imgSrc, title, price, id, isDigital, packageDetails }) =>
   );
 };
 
-export default ProductCard;
+export default ProductCard

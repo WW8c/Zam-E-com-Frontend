@@ -64,11 +64,10 @@ const ResetPassword = () => {
             {showConfirmPassword ? <EyeInvisibleOutlined /> : <EyeTwoTone twoToneColor="#FA8232" />}
           </span>
         </div>
-      </div>
-
       {/* Error Message */}
       {error && <p className="error-message">{error}</p>}
-
+      </div>
+      
       {/* Reset Password Button */}
       <button className="reset-button" onClick={handleResetPassword}>
         Reset Password <ArrowRightOutlined className="arrow" />

@@ -4,6 +4,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Select, Rate, Image } from 'antd'; // Import Image component from Ant Design
 import { Tabs, Typography } from 'antd';
 import { Productdetails } from '../../assets';
+import { CheckCircleFilled } from '@ant-design/icons';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useCart } from '../../context/CartContext';
 
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
@@ -11,7 +15,9 @@ const { Option } = Select;
 
 const Productdetail = () => {
    const { state } = useLocation();
-  const { imgSrc, title, price, id, isDigital,  packageDetails  } = state || {};
+   const [activeTab, setActiveTab] = useState('basic');
+ const { imgSrc, title, price, id, isDigital, packageDetails, category } = state || {};
+
 
   const digitalProductContent = (
     <>
@@ -21,33 +27,52 @@ const Productdetail = () => {
 
       <div className="product-details__section">
         <Title level={4}>Package Details</Title>
-       <Tabs defaultActiveKey="basic" className="product-details__tabs">
-  {['basic', 'standard', 'premium'].map((level) => (
-    <TabPane 
-      tab={level.charAt(0).toUpperCase() + level.slice(1)} 
-      key={level}
-    >
-      <div className="product-details__package-content">
-        <p>
-          <Text strong>Regular Price: </Text> 
-          ${packageDetails?.[level]?.price || 'N/A'}
-        </p>
-        <p>
-          <Text strong>Sale Price: </Text> 
-          ${packageDetails?.[level]?.sale || 'N/A'}
-        </p>
-        <p>
-          <Text strong>Description:</Text>{' '}
-          {packageDetails?.[level]?.desc || (
-            <span className="product-details__na">
-              No description provided
-            </span>
-          )}
-        </p>
-      </div>
-    </TabPane>
-  ))}
+<Tabs
+  activeKey={activeTab}
+  onChange={key => setActiveTab(key)}
+  className="product-details__tabs"
+>
+  {['basic', 'standard', 'premium'].map(level => {
+    const isActive = activeTab === level;
+    return (
+      <TabPane
+        key={level}
+        tab={
+          <span
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              border: isActive ? '2px solid #FA8232' : '2px solid transparent',
+              borderRadius: '8px',
+              padding: '4px 12px',
+              backgroundColor: isActive ? '#FFF3EB' : 'transparent',
+              color: isActive ? '#FA8232' : 'inherit',
+              transition: 'all 0.3s ease',
+              fontWeight: isActive ? '600' : 'normal',
+            }}
+          >
+            {isActive && <CheckCircleFilled style={{ color: '#FA8232' }} />}
+            {level.charAt(0).toUpperCase() + level.slice(1)}
+          </span>
+        }
+      >
+        {/* Package Details Content */}
+        <div className="product-details__package-content">
+          <p><Text strong>Regular Price:</Text> ${packageDetails?.[level]?.price || 'N/A'}</p>
+          <p><Text strong>Sale Price:</Text> ${packageDetails?.[level]?.sale || 'N/A'}</p>
+          <p>
+            <Text strong>Description:</Text>{' '}
+            {packageDetails?.[level]?.desc || (
+              <span className="product-details__na">No description provided</span>
+            )}
+          </p>
+        </div>
+      </TabPane>
+    );
+  })}
 </Tabs>
+
       </div>
     </>
   );
@@ -65,37 +90,28 @@ const Productdetail = () => {
 
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    const cartItem = {
-      id,
-      name: title,
-      price: parseFloat(price.replace('$', '')),
-      originalPrice: 1999,
-      quantity,
-      image: imgSrc,
-    };
+const { addToCart } = useCart();
 
-    // Get current cart items from localStorage (if any)
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Check if item already exists in cart
-    const existingItemIndex = storedCart.findIndex(item => item.id === cartItem.id);
-
-    if (existingItemIndex !== -1) {
-      // If it exists, increase the quantity
-      storedCart[existingItemIndex].quantity += quantity;
-    } else {
-      // If not, add new item
-      storedCart.push(cartItem);
-    }
-
-    // Save the updated cart to localStorage
-    localStorage.setItem('cart', JSON.stringify(storedCart));
-
-    // Navigate to shopping cart
-    navigate('../shoping-card');
+const handleAddToCart = () => {
+  const cartItem = {
+    id, // Use base ID for digital products
+    name: title,
+    price: isDigital 
+      ? parseFloat(packageDetails?.[activeTab]?.sale || price.replace('$', ''))
+      : parseFloat(price.replace('$', '')),
+    originalPrice: isDigital
+      ? parseFloat(packageDetails?.[activeTab]?.price || 1999)
+      : 1999,
+    quantity: isDigital ? 1 : quantity,
+    image: imgSrc,
+    category,
+    packageLevel: isDigital ? activeTab : undefined,
+    isDigital // Add digital flag
   };
 
+  addToCart(cartItem);
+  navigate('../shoping-card');
+};
   // Function to open the preview modal
   const handlePreview = (image) => {
     setCurrentImage(image); // Set the image that you want to preview
@@ -150,7 +166,8 @@ const Productdetail = () => {
           </div>
           <div className="info-row">
             <div>Brand: <strong>Brand Name</strong></div>
-            <div>Category: <strong>Category</strong></div>
+           <div>Category: <strong>{category}</strong></div>
+
           </div>
         </div>
 
@@ -223,6 +240,8 @@ const Productdetail = () => {
       </div>
 
     </div>
+    <ToastContainer position="top-right" autoClose={3000} />
+
   </div>
   );
 };

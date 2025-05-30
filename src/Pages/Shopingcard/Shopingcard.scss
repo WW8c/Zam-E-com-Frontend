@@ -188,12 +188,36 @@
         }
       }
   
-
+      
     }
   }
+    .item-details {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
   
-
+  .category-badge {
+    background: #f0f2f5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
   
+  .package-level {
+    background: #fff3eb;
+    color: #fa8232;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: capitalize;
+  }
+}
+// Add to your Shopingcard.scss
+.qty-control button:disabled {
+  opacity: 0.5;
+  cursor:not-allowed !important;
+  background-color: #f5f5f5;
+}
 @media (max-width: 768px) {
     .shopping-wrapper {
       flex-direction: column;

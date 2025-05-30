@@ -1,5 +1,6 @@
 @import "../../Styles/variables.scss";
 
+
 // section-1
 .section-1 {
   display: flex;
@@ -300,7 +301,11 @@
   .section-1 {
     display: block;
     padding: 15px;
-
+.right-side .custom-layout .custom-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
     .left-side {
       padding: 20px 20px;
 
@@ -371,7 +376,7 @@
   }
   .section-1 .left-side .mySwiper .swiper-pagination{
     justify-content: center;
-    bottom: 4px;
+    bottom: 2px;
   }
 }
 

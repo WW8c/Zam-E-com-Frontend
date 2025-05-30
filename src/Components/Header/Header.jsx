@@ -25,7 +25,8 @@ const Header = () => {
   const handleLogout = () => {
     // TODO: Add your logout logic (e.g., clearing auth tokens)
     console.log('Logging out...');
-    navigate('/login');
+  localStorage.removeItem('authToken'); // Clear the auth token!
+  navigate('/login');
   };
 
   const userMenu = (

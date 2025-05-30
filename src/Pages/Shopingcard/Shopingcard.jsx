@@ -2,30 +2,22 @@ import React, { useEffect, useState } from 'react';
 import './Shopingcard.scss';
 import { CloseOutlined, ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 const Shopingcard = () => {
   const navigate = useNavigate();
-  const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartItems(storedCart);
-  }, []);
+const { cartItems, removeFromCart, updateQuantity } = useCart();
 
-  const handleQuantityChange = (id, amount) => {
-    setCartItems(prev =>
-      prev.map(item =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + amount) }
-          : item
-      )
-    );
-  };
 
-  const handleRemoveItem = (id) => {
-    setCartItems(prev => prev.filter(item => item.id !== id));
-    localStorage.setItem('cart', JSON.stringify(cartItems.filter(item => item.id !== id)));
-  };
+const handleQuantityChange = (id, amount) => {
+  updateQuantity(id, amount);
+};
+
+
+const handleRemoveItem = (id) => {
+  removeFromCart(id);
+};
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const discount = cartItems.length > 0 ? 24 : 0;
@@ -57,6 +49,15 @@ const Shopingcard = () => {
                     <img src={item.image} alt="product" />
                     <div>
                       <p>{item.name}</p>
+                      {/* Add this section */}
+    <div className="item-details" style={{flexDirection: 'row'}}>
+      {item.category && (
+        <span className="category-badge">{item.category}</span>
+      )}
+      {item.packageLevel && (
+        <span className="package-level">{item.packageLevel}</span>
+      )}
+    </div>
                     </div>
                   </td>
                   <td>
@@ -65,13 +66,23 @@ const Shopingcard = () => {
                     )}{' '}
                     ${item.price}
                   </td>
-                  <td>
-                    <div className="qty-control">
-                      <button onClick={() => handleQuantityChange(item.id, -1)}>-</button>
-                      <span>{item.quantity.toString().padStart(2, '0')}</span>
-                      <button onClick={() => handleQuantityChange(item.id, 1)}>+</button>
-                    </div>
-                  </td>
+<td>
+  <div className="qty-control">
+    <button 
+      onClick={() => handleQuantityChange(item.id, -1)}
+      disabled={item.packageLevel} // Disable for digital products
+    >
+      -
+    </button>
+    <span>{item.quantity.toString().padStart(2, '0')}</span>
+    <button 
+      onClick={() => handleQuantityChange(item.id, 1)}
+      disabled={item.packageLevel} // Disable for digital products
+    >
+      +
+    </button>
+  </div>
+</td>
                   <td>${(item.price * item.quantity).toFixed(2)}</td>
                 </tr>
               ))}

@@ -34,7 +34,6 @@ const Homepage = () => {
     }
   ];
 
-
   return (
     <div className='home-page'>
       <div className="section-1">
@@ -46,7 +45,7 @@ const Homepage = () => {
              autoplay={{
     delay: 3000, // 5 seconds between slides
     disableOnInteraction: false,
-    pauseOnMouseEnter: true
+    pauseOnMouseEnter: false,
   }}
             slidesPerView={1}
             pagination={{
@@ -56,7 +55,7 @@ const Homepage = () => {
               bulletActiveClass: 'swiper-pagination-bullet-active'
             }}
             loop={true}
-            autoplay={{ delay: 5000 }} className="mySwiper">
+          className="mySwiper">
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="left-content">
@@ -77,8 +76,6 @@ const Homepage = () => {
             <div className="swiper-pagination"></div>
           </Swiper>
         </div>
-
-
         {/* Right Side: Promo Cards */}
         <div className="right-side">
           <div className="promo-card with-image-layout"> 
@@ -105,7 +102,6 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-
       <Bestdeals />
       <CategoriesSection />
     </div>

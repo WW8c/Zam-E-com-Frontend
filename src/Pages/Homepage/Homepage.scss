@@ -15,7 +15,7 @@
       overflow: hidden;
   width: 100%;
 
-   // Swiper container styles
+   // Swiper container styles  
     .mySwiper {
       height: 100%;
       // padding-bottom: 40px;
@@ -130,6 +130,7 @@
       }
     }
   }
+
   .right-side {
     flex: 1;
     display: flex;
@@ -154,6 +155,7 @@
         align-items: center;
         gap: 8px;
         background: $primary;
+        width: max-content;
         color: white;
         text-transform: uppercase;
         padding: 14px 18px;
